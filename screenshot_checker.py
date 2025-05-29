@@ -7,6 +7,8 @@ from datetime import datetime
 # Target hex color
 TARGET_HEX = "#651510"
 TARGET_RGB = tuple(int(TARGET_HEX[i:i+2], 16) for i in (1, 3, 5))
+TARGET_RGB = (87, 6, 6)
+
 
 # Output directory
 OUTPUT_DIR = "screenshots"
@@ -17,7 +19,7 @@ def contains_color(img: Image.Image, target_rgb: tuple) -> bool:
     return target_rgb in pixels
 
 def main():
-    print("Monitoring screen for color:", TARGET_HEX)
+    print("Monitoring screen for color:", TARGET_RGB)
     try:
         while True:
             screenshot = ag.screenshot()
@@ -26,7 +28,7 @@ def main():
                 filepath = os.path.join(OUTPUT_DIR, f"screenshot_{timestamp}.png")
                 screenshot.save(filepath)
                 print(f"Saved screenshot: {filepath}")
-            time.sleep(0.1)
+            time.sleep(0.5)
     except KeyboardInterrupt:
         print("Stopped by user.")
 

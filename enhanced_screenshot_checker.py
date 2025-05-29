@@ -4,7 +4,9 @@ import time
 import os
 from datetime import datetime
 
-TARGET_ROW_PATTERN = [(101, 21, 16), (255, 255, 255), (0, 0, 0)]
+import Constants
+
+TARGET_ROW_PATTERN = Constants.PRESENT_RGB_ROWS
 PATTERN_LENGTH = len(TARGET_ROW_PATTERN)
 
 OUTPUT_DIR = "screenshots"
@@ -41,7 +43,7 @@ def main():
                 filepath = os.path.join(OUTPUT_DIR, f"match_{timestamp}.png")
                 screenshot.save(filepath)
                 print(f"Saved screenshot: {filepath}")
-            time.sleep(0.1)
+            time.sleep(0.5)
     except KeyboardInterrupt:
         print("Stopped by user.")
 
