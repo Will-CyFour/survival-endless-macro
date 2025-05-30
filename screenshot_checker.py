@@ -18,6 +18,8 @@ def contains_color(img: Image.Image, target_rgb: tuple) -> bool:
     pixels = img.convert('RGB').getdata()
     return target_rgb in pixels
 
+
+
 def main():
     print("Monitoring screen for color:", TARGET_RGB)
     try:
