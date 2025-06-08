@@ -4,7 +4,7 @@ import time
 import os
 from datetime import datetime
 
-import Constants
+from Constants import Constants
 
 TARGET_ROW_PATTERN = Constants.PRESENT_RGB_ROWS
 PATTERN_LENGTH = len(TARGET_ROW_PATTERN)
